@@ -22,3 +22,7 @@ body[data-theme='light'] ::selection {
     background-color: #4c780e;
     color: #263911;
 }
+
+.site-title{
+    font-weight: 600!important;
+}

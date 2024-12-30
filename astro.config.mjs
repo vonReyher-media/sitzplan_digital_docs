@@ -7,7 +7,25 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
     integrations: [starlight({
-        title: 'Sitzplan.Digital',
+        title: {
+            'de': 'Sitzplan.Digital Dokumentation',
+            'en': 'Sitzplan.Digital Documentation',
+        },
+        defaultLocale: 'de',
+        locales: {
+            // Englische Dokumente in `src/content/docs/de/`
+            de: {
+                label: 'Deutsch',
+                lang: 'de',
+            },
+            // Vereinfachte chinesische Dokumente in `src/content/docs/en/`
+            en: {
+                label: 'Englisch',
+                lang: 'en',
+            },
+        },
+        description: 'Sitzplan.Digital Documentation',
+
         social: {
             github: 'https://github.com/vonReyher-media/',
         },
@@ -21,17 +39,28 @@ export default defineConfig({
         logo: {
             src: './src/assets/sitzplandigital_logo.svg',
         },
+        editLink: {
+            baseUrl: 'https://github.com/vonReyher-media/sitzplan_digital_docs/edit/main/src/content/docs/',
+        },
+        lastUpdated: true,
         sidebar: [
             {
-                label: 'Guides',
+                label: 'Allgemein',
                 items: [
                     // Each item here is one entry in the navigation menu.
-                    { label: 'Example Guide', slug: 'guides/example' },
+                    { label: 'Schnellstart', slug: 'allgemein/schnellstart' },
+                    { label: 'Preise', slug: 'allgemein/preise' },
+                    { label: 'Kickstarter', slug: 'allgemein/kickstarter' },
+                    { label: 'FAQ', slug: 'allgemein/faq' },
                 ],
             },
             {
                 label: 'Reference',
                 autogenerate: { directory: 'reference' },
+            },
+            {
+                label: 'Mittmachen',
+                autogenerate: { directory: 'mitmachen'},
             },
         ],
 		}), tailwind({
