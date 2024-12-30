@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Host Grotesk', sans-serif;
+    /*color: #ecf0e3;*/
+    /*background-color: #171a0e;*/
+}
+
+::selection {
+    background-color: #4d7910;
+    color: #becfb1;
+}
+
+body[data-theme='light'] {
+    color: #242a10;
+    background-color: #ffffff;
+}
+
+body[data-theme='light'] ::selection {
+    background-color: #4c780e;
+    color: #263911;
+}

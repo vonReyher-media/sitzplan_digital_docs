@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Host Grotesk';
+    /* Use a relative path to the local font file in `url()`. */
+    src: url('./HostGrotesk-VariableFont_wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Host Grotesk', sans-serif;
+}
